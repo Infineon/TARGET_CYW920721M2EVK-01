@@ -150,7 +150,6 @@ typedef struct
 }
 wiced_platform_gpio_config_t;
 
-
 /*! pin for button 1 */
 #define WICED_GPIO_PIN_BUTTON_1       WICED_P00
 #define WICED_GPIO_PIN_BUTTON         WICED_GPIO_PIN_BUTTON_1
@@ -168,6 +167,7 @@ wiced_platform_gpio_config_t;
 /* Platform function */
 void     wiced_platform_init(void);
 uint32_t wiced_platform_get_button_pressed_value(wiced_platform_button_number_t button);
+wiced_bool_t wiced_platform_transport_init(void *p_rx_data_handler);
 
 /* utility functions */
 void     wiced_platform_register_button_callback(wiced_platform_button_number_t button, void (*userfn)(void*, uint8_t), void* userdata, wiced_platform_button_interrupt_edge_t trigger_edge);
