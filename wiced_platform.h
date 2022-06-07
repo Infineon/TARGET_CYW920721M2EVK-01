@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2021, Cypress Semiconductor Corporation (an Infineon company) or
+ * Copyright 2016-2022, Cypress Semiconductor Corporation (an Infineon company) or
  * an affiliate of Cypress Semiconductor Corporation.  All rights reserved.
  *
  * This software, including source code, documentation and related
@@ -37,6 +37,24 @@
 #include "wiced.h"
 #include "wiced_hal_gpio.h"
 
+#ifdef AUDIO_SHIELD_REMOVED // custom config with audio shield removed
+//! Number of LEDs available on the platform.
+typedef enum
+{
+    WICED_PLATFORM_LED_1,  //!< LED 1
+    WICED_PLATFORM_LED_2,  //!< LED 2
+    WICED_PLATFORM_LED_MAX //!< Max LED for error check
+} wiced_platform_led_number_t;
+
+//! Number of Buttons available on the platform.
+typedef enum
+{
+    WICED_PLATFORM_BUTTON_1,  //!< BUTTON 1
+    WICED_PLATFORM_BUTTON_MAX //!< Max button for error check
+} wiced_platform_button_number_t;
+
+#define WICED_PLATFORM_BUTTON_MAX_DEF     1   //define for preprocessor
+#else
 //! Number of LEDs available on the platform.
 typedef enum
 {
@@ -53,6 +71,7 @@ typedef enum
 } wiced_platform_button_number_t;
 
 #define WICED_PLATFORM_BUTTON_MAX_DEF     3   //define for preprocessor
+#endif
 
 //! Number of GPIO available on the platform.
 // Configurable via SuperMux
@@ -151,6 +170,10 @@ typedef struct
 wiced_platform_gpio_config_t;
 
 /*! pin for button 1 */
+#ifdef AUDIO_SHIELD_REMOVED // custom config with audio shield removed
+#define WICED_GPIO_PIN_LED_2          WICED_P04
+#endif
+
 #define WICED_GPIO_PIN_BUTTON_1       WICED_P00
 #define WICED_GPIO_PIN_BUTTON         WICED_GPIO_PIN_BUTTON_1
 

@@ -23,4 +23,4 @@ The Infineon CYW920721M2EVK-01 Evaluation kit enables you to evaluate and develo
 Max UART baud rate is 3M.
 Many GPIO are dedicated to audio shield interface support. Use the device configurator to modify pin assignments in order to use test programs such as hello_client and hal/gpio. Refer to the kit schematics to make pin assignment decisions.
 
-For more information, see the [CYW20721B2 Product Guide](https://community.cypress.com/docs/DOC-17429)
+For more information, see the [CYW20721B2 Product Guide](https://www.infineon.com/dgdl/Infineon-CYW20721_Enhanced_Low_Power_BR_EDR_BLE_Bluetooth_5.0_SOC_for_Audio-AdditionalTechnicalInformation-v06_00-EN.pdf?fileId=8ac78c8c7e7124d1017ebeab5c8a566e)
